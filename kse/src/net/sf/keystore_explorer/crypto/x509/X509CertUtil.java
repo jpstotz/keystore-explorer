@@ -76,6 +76,8 @@ public final class X509CertUtil {
 
 	public static final String BEGIN_CERTIFICATE = "-----BEGIN CERTIFICATE-----";
 	public static final String END_CERTIFICATE = "-----END CERTIFICATE-----";
+	public static final String BEGIN_PKCS7 = "-----BEGIN PKCS7-----";
+	public static final String END_PKCS7 = "-----END PKCS7-----";
 	public static final String BASE64_TESTER = "^([A-Za-z0-9+/]{4})*([A-Za-z0-9+/]{4}|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{2}==)$";
 
 	private X509CertUtil() {
@@ -166,6 +168,9 @@ public final class X509CertUtil {
 		if (certsStr.startsWith(BEGIN_CERTIFICATE)) {
 			certsStr = certsStr.replaceAll(BEGIN_CERTIFICATE, "");
 			certsStr = certsStr.replaceAll(END_CERTIFICATE, "!");
+		} else if (certsStr.startsWith(BEGIN_PKCS7)) {
+			certsStr = certsStr.replaceAll(BEGIN_PKCS7, "");
+			certsStr = certsStr.replaceAll(END_PKCS7, "!");
 		}
 
 		// If one or more base 64 encoded certs then decode
