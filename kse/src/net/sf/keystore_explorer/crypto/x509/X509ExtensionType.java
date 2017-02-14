@@ -302,6 +302,11 @@ public enum X509ExtensionType {
 	MS_CERTIFICATE_TEMPLATE("1.3.6.1.4.1.311.21.7", "MSCertificateTemplate"),
 	MS_APPLICATION_POLICIES("1.3.6.1.4.1.311.21.10", "MSApplicationPolicies"),
 
+  	// ////////////////////////////////
+	// RFC 6962
+	// ////////////////////////////////
+
+	SIGNED_CERTIFICATE_TIMESTAMP_LIST("1.3.6.1.4.1.11129.2.4.2", "SignedCertificateTimestampList"),
 
 	// ////////////////////////////////
 	// RFC 3851
